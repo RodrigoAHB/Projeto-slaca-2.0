@@ -12,6 +12,8 @@ const footer = document.querySelector('#footer');
 const subjectCard = document.querySelector('.subject-card');
 const disContainerSent = document.querySelector('.dis-container-sent');
 const createNewTopic = document.querySelector('.new-topic-btn');
+const seePosted = document.querySelector('.posted-subject-btn');
+const disPosted = document.querySelector('.dis-container-posted');
 
 //Event Listeners
 verMais.addEventListener('click', readMore);
@@ -19,6 +21,7 @@ verMenos.addEventListener('click', readLess);
 createTopic.addEventListener('click', openCreateTopic);
 send.addEventListener('click', sendTopic);
 createNewTopic.addEventListener('click', createTopicNew);
+seePosted.addEventListener('click', seePostedSubject);
 
 //Functions
 function readMore () {
@@ -68,5 +71,12 @@ function createTopicNew(){
     } else {
         sideNav.style.height = '2090px';
     }
-    
+}
+
+function seePostedSubject(){
+    disContainerSent.style.display = 'none';
+    disContainerClosed.style.display = 'none';
+    disContainerOpen.style.display = 'none';
+    disPosted.style.display = 'block'
+    sideNav.style.height = '2370px'
 }
